@@ -1711,9 +1711,6 @@ SectionVerb
 	Name "Voice Call IPBT SCO Rx"
 
 	EnableSequence
-                'Internal BTSCO SampleRate':1:8000
-                'INTERNAL_BT_SCO_RX_Voice Mixer Voip':1:1
-                'Voip_Tx Mixer INTERNAL_BT_SCO_TX_Voip':1:1
 	EndSequence
 
 	DisableSequence
@@ -1738,9 +1735,6 @@ SectionVerb
 	EndSequence
 
 	DisableSequence
-                'Internal BTSCO SampleRate':1:8000
-                'INTERNAL_BT_SCO_RX_Voice Mixer Voip':1:0
-                'Voip_Tx Mixer INTERNAL_BT_SCO_TX_Voip':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -3569,26 +3563,6 @@ SectionDevice
 EndSection
 
 SectionDevice
-	Name "Camcorder Tx"
-	Comment "Camcorder Tx device"
-
-	EnableSequence
-		'DEC1 MUX':0:ADC1
-		'IIR1 INP1 MUX':0:DEC1
-		'ADC1 Volume':1:40
-	EndSequence
-
-	DisableSequence
-		'DEC1 MUX':0:ADC1
-		'IIR1 INP1 MUX':0:ZERO
-	EndSequence
-
-	ACDBID	61:2
-	EffectsMixerCTL "SRS TruMedia"
-
-EndSection
-
-SectionDevice
 	Name "Line MFD"
 	Comment "Speaker MFD Tx device"
 
@@ -4231,7 +4205,6 @@ SectionDevice
 		'RX3 MIX1 INP1':0:RX1
 		'SPK DAC Switch':1:1
 		'RX1 MIX1 INP1':0:RX1
-		'RX1 Digital Volume':1:55
 		'RDAC3 MUX':0:RX1
 		'HPHL DAC Switch':1:1
 		'RX2 MIX1 INP1':0:RX3
@@ -4242,14 +4215,13 @@ SectionDevice
 		'RX3 MIX1 INP1':0:ZERO
 		'SPK DAC Switch':1:0
 		'RX1 MIX1 INP1':0:ZERO
-		'RX1 Digital Volume':1:68
 		'RDAC3 MUX':0:RX2
 		'HPHL DAC Switch':1:0
 		'RX2 MIX1 INP1':0:ZERO
 		'RDAC4 MUX':0:ZERO
 	EndSequence
 
-	ACDBID	268435457:1
+	ACDBID	10:1
 	EffectsMixerCTL "SRS TruMedia"
 	EC_REF_RXMixerCTL "I2S_RX"
 
@@ -4363,9 +4335,7 @@ SectionDevice
 		'RX3 MIX1 INP1':0:IIR1
 		'RX3 MIX1 INP2':0:RX3
 		'SPK DAC Switch':1:1
-		'RX1 Digital Volume':1:55
 		'RX1 MIX1 INP1':0:RX1
-		'RX2 Digital Volume':1:55
 		'RX2 MIX1 INP1':0:RX2
 		'HPHL DAC Switch':1:1
 	EndSequence
@@ -4385,13 +4355,11 @@ SectionDevice
 		'RX3 MIX1 INP2':0:ZERO
 		'SPK DAC Switch':1:0
 		'RX1 MIX1 INP1':0:ZERO
-		'RX1 Digital Volume':1:68
 		'RX2 MIX1 INP1':0:ZERO
-		'RX2 Digital Volume':1:68
 		'HPHL DAC Switch':1:0
 	EndSequence
 
-	ACDBID	268435458:1
+	ACDBID	10:1
 	EffectsMixerCTL "SRS TruMedia"
 	EC_REF_RXMixerCTL "I2S_RX"
 
@@ -5091,9 +5059,6 @@ SectionModifier
 	Name "Play VOIPBT SCO Rx"
 
 	EnableSequence
-                'Internal BTSCO SampleRate':1:8000
-                'INTERNAL_BT_SCO_RX_Voice Mixer Voip':1:1
-                'Voip_Tx Mixer INTERNAL_BT_SCO_TX_Voip':1:1
 	EndSequence
 
 	DisableSequence
@@ -5118,9 +5083,6 @@ SectionModifier
 	EndSequence
 
 	DisableSequence
-                'Internal BTSCO SampleRate':1:8000
-                'INTERNAL_BT_SCO_RX_Voice Mixer Voip':1:0
-                'Voip_Tx Mixer INTERNAL_BT_SCO_TX_Voip':1:0
 	EndSequence
 
 	# ALSA PCMs
